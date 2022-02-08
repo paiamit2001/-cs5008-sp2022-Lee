@@ -81,7 +81,8 @@ queue_t* newQueue() {
 bool isEmpty(queue_t* q_p) {
   bool b = true;   // temporary bool to hold return value - initalize to default value
 
-  if (q_p != NULL){
+  if (q_p -> tail_p != NULL || q_p -> head_p != NULL){
+
    return false;
   }
    
