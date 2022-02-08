@@ -7,7 +7,7 @@
 /*structure to hold the details of an employee*/
 typedef struct employee
 {
-    int empId[100];
+    int empId;
     char Name[100];
     char Designation[100];
     char Dept[10];
@@ -19,7 +19,7 @@ void readData(int n, employee_t* s)
   int i;
   for (i = 0; i < n; i++){
   printf("Enter the employeeID, Name, Designation and Department of Employee %d: \n", i+1);
-  scanf("%d %s %s %s", &s[i].empId, &s[i].Name, &s[i].Designation, &s[i].Dept);
+  scanf("%d %s %s %s", &s[i].empId, s[i].Name, s[i].Designation, s[i].Dept);
   }
 
     
@@ -31,7 +31,7 @@ void display(int n, employee_t* s)
   for (i = 0; i < n; i++){
   
   printf("The details of Employee %d:\n", i+1);
-  printf("empId: %d\n", *s[i].empId);
+  printf("empId: %d\n", s[i].empId);
   printf("Name: %s\n", s[i].Name);
   printf("Designation: %s\n", s[i].Designation);
   printf("Dept: %s\n", s[i].Dept);
