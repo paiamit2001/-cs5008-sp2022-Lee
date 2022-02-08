@@ -1,4 +1,4 @@
-//Name: Amit Paii
+//Name: Amit Pai
 //Email: pai.ami@northeastern.edu
 
 /*C Program to read and print the employee details using structure and dynamic memory allocation*/
@@ -45,10 +45,10 @@ void display(int n, employee_t* s)
 int main()
 
 {
-  employee_t* s = (employee_t*)malloc(sizeof(employee_t));
   int n;
   printf("\nEnter the number of employees: ");
   scanf("%d", &n);
+  employee_t* s = (employee_t*)malloc(n*sizeof(employee_t));
   readData(n, s);
   display(n, s);
   free(s);    
