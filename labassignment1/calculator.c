@@ -33,6 +33,11 @@ int main()
     break;
 
    case 4:
+   if (b==0)
+   {
+       printf("invalid input b: %d\n", b);
+       return -1;
+   }
    c = a/b;
    printf("The value is: %d\n", c);
 
