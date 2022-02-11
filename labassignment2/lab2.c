@@ -1,6 +1,6 @@
 //Name: Amit Pai
 //Email: pai.ami@northeastern.edu
-C program to implement queue using arrays
+//C program to implement queue using arrays
 
 #include <stdio.h>
 #define N 8 //Max. capacity of Queue
@@ -40,16 +40,34 @@ int peek()
     return arr[0];
     }
 /*---To insert the elements into the queue------*/
-void enqueue(int data)
-{
+void enqueue(int data){
  //insert your code here
- if (isEmpty
+ if (isempty()){
+  front = -1;
+  rear = 0;
+   arr[rear] = data;
+ }
+  else if (rear == N-1){
+     printf("Queue is full\n"); 
+  } else {
+    rear++;
+    arr[rear] = data;
+  }
 }
+
+
 /*----Function to remove the elements from the queue----*/
 int dequeue()
 {   
     //insert your code here
+    if (isempty()){	
+     front = 0;
+  } else {
+     front = front + 1;
+   }
+   return arr[front];
 }
+
 /*---Function to display the elements of the queue-------*/
 void display()
 {
