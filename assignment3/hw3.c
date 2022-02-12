@@ -71,9 +71,10 @@ typedef struct q {
 queue_t* newQueue() {
   queue_t* q_p;   // temp pointer to hold newly created queue
   q_p = (queue_t*)malloc(sizeof(queue_t));
+  if (q_p != NULL){ // if it is successfully malloced
   q_p->head_p = NULL;
   q_p->tail_p = NULL;
-  
+  }
   return q_p;
 };
 
@@ -81,7 +82,9 @@ queue_t* newQueue() {
 bool isEmpty(queue_t* q_p) {
   bool b = true;   // temporary bool to hold return value - initalize to default value
 
-  if (q_p -> tail_p != NULL || q_p -> head_p != NULL){
+  // Given pointer can be NULL
+  // This is because the function might be used as API, not only enqueue/dequeue
+  if (q_p != NULL && q_p->head_p != NULL && q_p->tail_p != NULL){
 
    return false;
   }
