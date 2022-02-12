@@ -61,6 +61,9 @@ int dequeue()
 {   
     int i;
     //insert your code here
+    if (isempty()){
+    printf("Queue is empty");
+    }
     int ret = arr[0];
    for (i=1; i<=rear; i++){
      arr[i-1]= arr[i];
