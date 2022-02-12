@@ -45,12 +45,12 @@ void enqueue(int data){
  if (isempty()){
   front = -1;
   rear = 0;
-   arr[rear] = data;
+  arr[rear] = data;
  }
   else if (rear == N-1){
      printf("Queue is full\n"); 
   } else {
-    rear++;
+    rear = rear + 1;
     arr[rear] = data;
   }
 }
@@ -59,13 +59,14 @@ void enqueue(int data){
 /*----Function to remove the elements from the queue----*/
 int dequeue()
 {   
+    int i;
     //insert your code here
-    if (isempty()){	
-     front = 0;
-  } else {
-     front = front + 1;
-   }
-   return arr[front];
+    int ret = arr[0];
+   for (i=1; i<=rear; i++){
+     arr[i-1]= arr[i];
+    } 
+   rear = rear-1;
+   return ret;
 }
 
 /*---Function to display the elements of the queue-------*/
