@@ -39,9 +39,9 @@ void generate_num(int *arr)
 
 void selection_sort_2arr(int *source, int *dest, bool *valid)
 {
-  int smallest = -1; // current smallest element
   for (int i = 0; i < LIMIT; i++)
   {
+    int smallest = -1; // current smallest element
     // INSERT YOUR CODE HERE
     for (int j = 0; j < LIMIT; j++)
     {
@@ -51,7 +51,7 @@ void selection_sort_2arr(int *source, int *dest, bool *valid)
         {
           smallest = j;
         }
-        if (source[smallest] > source[j])
+        else if (source[smallest] > source[j])
         {
           smallest = j;
         }
@@ -102,16 +102,12 @@ void selection_sort_1arr(int *source)
       {
         smallest = k;
       }
-      if (i != smallest)
-      {
-        temp = source[i];
-        source[i] = source[smallest];
-        source[smallest] = temp;
-
-        // printf("swapped samllest:src[%d]:%d, origin:src[%d],%d\n",
-        //        i, source[i], smallest, source[smallest]);
-        // print_array(source, 10);
-      }
+    }
+    if (i != smallest)
+    {
+      temp = source[i];
+      source[i] = source[smallest];
+      source[smallest] = temp;
     }
   }
 }
@@ -139,9 +135,9 @@ int main()
 
   // Selection sort with 2 array
   // print out sorted array by 2 array in rows of 10
-  // selection_sort_2arr(source, dest, valid);
+  selection_sort_2arr(source, dest, valid);
   printf("Sorted array by 2 array:\n");
-  //  print_array(dest, 10);
+  print_array(dest, 10);
 
   // Selection sort with 1 array
   // print out sorted array by 1 array in rows of 10
