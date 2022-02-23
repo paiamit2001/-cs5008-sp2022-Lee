@@ -1,5 +1,5 @@
-// name: <your name here>
-// email: <your email here>
+// name: Amit Pai
+// email: pai.ami@northeastern.edu
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,13 +37,41 @@ void mergeIt(
 	   int leftStop,
 	   int rightStart,
 	   int rightStop) {
+
   
 
   // ADD YOUR CODE HERE
   
-  return;
-}
-
+  int i = leftStart; //lower bound array position
+  int j = rightStart; // this is midpoint + 1
+  int k = leftStart; 
+  char sortdata[200]; // temp array to store sorted array
+  while (i <= leftStop && j <= rightStop){
+    if (data[i] < data[j]){
+      sortdata[k] = data[i];
+      i++; 
+      k++;
+    } else {
+      sortdata[k] = data[j];
+      j++;
+      k++;
+    }
+  }
+    while (i <= leftStop){
+      sortdata[k] = data[i];
+      i++;
+      k++;
+    }
+      while (j <= rightStop){
+        sortdata[k] = data[j];
+        j++;
+        k++;
+      }
+    for (k = leftStart; k<= rightStop; k++){
+      data[k] = sortdata[k];
+    }
+    return;
+  }
 
 
 // break data array up into halves until down to single elements
